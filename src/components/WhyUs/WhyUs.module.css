@@ -1,0 +1,308 @@
+.section {
+  padding: 2rem 0;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(0, 174, 239, 0.15);
+  color: #00AEEF;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(0, 174, 239, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.titleAccent {
+  color: #00AEEF;
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.mvCard {
+  border-radius: 24px;
+  padding: 3.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  animation: floatAnimation 5s ease-in-out infinite;
+}
+
+.misionCard {
+  background: linear-gradient(135deg, #1A75B8 0%, #0099D8 60%, #00AEEF 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 117, 184, 0.15);
+  animation-delay: 0s;
+}
+
+.misionCard:hover {
+  animation: none;
+  transform: translateY(-20px);
+  box-shadow: 0 25px 50px rgba(0, 174, 239, 0.35);
+  border-color: #00AEEF;
+}
+
+.visionCard {
+  background: linear-gradient(135deg, #1A75B8 0%, #0099D8 60%, #00AEEF 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 117, 184, 0.15);
+  animation-delay: 0.4s;
+}
+
+.visionCard:hover {
+  animation: none;
+  transform: translateY(-20px);
+  box-shadow: 0 25px 50px rgba(0, 174, 239, 0.35);
+  border-color: #00AEEF;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.misionCard .iconWrapper,
+.visionCard .iconWrapper {
+  background: rgba(255, 255, 255, 0.12);
+  color: #00AEEF;
+}
+
+.iconWrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cardTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.valuesSection {
+  margin-top: 2rem;
+}
+
+.valuesTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 3.5rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.valueCard {
+  background: linear-gradient(135deg, #1A75B8 0%, #0099D8 60%, #00AEEF 100%);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 117, 184, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.valueCard:nth-child(1) { animation-delay: 0s; }
+.valueCard:nth-child(2) { animation-delay: 0.2s; }
+.valueCard:nth-child(3) { animation-delay: 0.4s; }
+.valueCard:nth-child(4) { animation-delay: 0.6s; }
+.valueCard:nth-child(5) { animation-delay: 0.8s; }
+
+.valueCard:hover {
+  animation: none;
+  transform: translateY(-20px);
+  box-shadow: 0 25px 50px rgba(0, 174, 239, 0.35);
+  border-color: #00AEEF;
+}
+
+.valueIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.valueIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.valueCard:hover .valueIcon {
+  background: linear-gradient(135deg, #00AEEF, #0099D8);
+  color: #ffffff;
+}
+
+.valueTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+}
+
+.valueDesc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.esenciaCard {
+  background: linear-gradient(135deg, #1A75B8 0%, #0099D8 60%, #00AEEF 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 117, 184, 0.15);
+  margin-bottom: 2.5rem;
+  border-left: 5px solid #00AEEF;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.esenciaCard:hover {
+  animation: none;
+  transform: translateY(-18px);
+  box-shadow: 0 25px 50px rgba(0, 174, 239, 0.35);
+  border-color: #00AEEF;
+}
+
+.esenciaHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.esenciaIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #00AEEF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esenciaIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.esenciaTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.esenciaText {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .valuesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mvGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .mvCard {
+    padding: 2.5rem;
+  }
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .esenciaCard {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}

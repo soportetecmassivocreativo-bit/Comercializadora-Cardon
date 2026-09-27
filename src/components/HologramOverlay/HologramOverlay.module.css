@@ -1,0 +1,147 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ── Circuit grid layer ── */
+.circuitLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+}
+
+/* ── Main hologram lines ── */
+.holoLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+}
+
+/* ── Concentric rings ── */
+.ringsLayer {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  opacity: 0.5;
+}
+
+.ringsTopRight {
+  top: 3%;
+  right: -8%;
+}
+
+.ringsMidLeft {
+  top: 35%;
+  left: -10%;
+}
+
+.ringsBottomRight {
+  top: 65%;
+  right: -6%;
+}
+
+/* ── Hexagon grid ── */
+.hexLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+}
+
+/* ── Data nodes ── */
+.nodeLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+/* ── Scanning beam ── */
+.scanBeam {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 174, 239, 0.03) 40%,
+    rgba(0, 174, 239, 0.06) 50%,
+    rgba(0, 174, 239, 0.03) 60%,
+    transparent 100%
+  );
+  animation: scanSweep 12s ease-in-out infinite;
+}
+
+/* ── Animated dashes ── */
+.dashLine {
+  stroke-dasharray: 8 4;
+  animation: dashFlow 30s linear infinite;
+}
+
+.dashLineSlow {
+  stroke-dasharray: 12 6;
+  animation: dashFlow 50s linear infinite;
+}
+
+.dashLineFast {
+  stroke-dasharray: 4 4;
+  animation: dashFlow 20s linear infinite;
+}
+
+/* ── Pulsing rings ── */
+.pulseRing {
+  animation: ringPulse 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.pulseRingSlow {
+  animation: ringPulse 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── Rotating arcs ── */
+.rotateArc {
+  animation: arcRotate 20s linear infinite;
+  transform-origin: center;
+}
+
+.rotateArcReverse {
+  animation: arcRotate 25s linear infinite reverse;
+  transform-origin: center;
+}
+
+/* ── Glowing nodes ── */
+.glowNode {
+  animation: nodeGlow 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── Keyframes ── */
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+@keyframes arcRotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nodeGlow {
+  0%, 100% { opacity: 0.5; r: 3; }
+  50% { opacity: 1; r: 5; }
+}
+
+@keyframes scanSweep {
+  0% { left: -30%; }
+  50% { left: 100%; }
+  100% { left: -30%; }
+}

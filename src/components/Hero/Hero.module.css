@@ -1,0 +1,358 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgHalf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.bgLeft {
+  left: 0;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.bgRight {
+  left: 0;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.bgLeft img,
+.bgRight img {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  object-fit: cover !important;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(10, 42, 63, 0.88) 0%, rgba(11, 61, 92, 0.65) 50%, rgba(14, 165, 233, 0.25) 100%);
+}
+
+.shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 50%;
+  animation: heroFloat 8s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 350px;
+  height: 350px;
+  top: -80px;
+  right: -80px;
+  border-width: 2px;
+}
+
+.shape2 {
+  width: 220px;
+  height: 220px;
+  bottom: 8%;
+  left: -40px;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  width: 160px;
+  height: 160px;
+  top: 28%;
+  right: 12%;
+  border-radius: 24%;
+  animation-delay: 4s;
+}
+
+.shape4 {
+  width: 100px;
+  height: 100px;
+  bottom: 25%;
+  right: 35%;
+  animation-delay: 1s;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  width: 100%;
+  padding: 0 2rem;
+  margin-left: max(2rem, calc((100vw - 1200px) / 2));
+}
+
+.titleBlock {
+  margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+}
+
+.titleLine {
+  display: block;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: #ffffff;
+  line-height: 1.1;
+  overflow: hidden;
+}
+
+.titleAccent {
+  color: #00A3E0;
+  font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.titleSub {
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  max-width: 580px;
+  line-height: 1.75;
+  margin-top: 1.5rem;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #00A3E0, #42C0EB);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(14, 165, 233, 0.5);
+}
+
+.btnOutline {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  animation: floatButton 5s ease-in-out infinite;
+}
+
+.btnOutline:nth-child(2) {
+  animation-delay: 0.4s; /* Slight offset between the two buttons for a more organic feel */
+}
+
+.btnOutline:hover {
+  animation: none;
+  transform: translateY(0);
+  border-color: #42C0EB;
+  color: #42C0EB;
+  background: rgba(56, 189, 248, 0.1);
+}
+
+@keyframes floatButton {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.scrollText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scaleY(0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+  }
+  .content {
+    text-align: center;
+    margin-left: 0;
+    padding: 0 1.5rem;
+  }
+  .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta {
+    justify-content: center;
+  }
+  .btnPrimary,
+  .btnOutline {
+    width: 100%;
+    text-align: center;
+  }
+  .shape1, .shape3 {
+    display: none;
+  }
+}
+
+/* Floating Brand Essence Card */
+.brandCard {
+  position: absolute;
+  right: calc(25% - 175px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 350px;
+  opacity: 0;
+}
+
+.brandCardInner {
+  background: linear-gradient(135deg, rgba(10, 34, 64, 0.55) 0%, rgba(10, 34, 64, 0.3) 100%);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 48px 0 48px 0;
+  padding: 2.25rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-26px);
+  }
+}
+
+.brandCardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 163, 224, 0.15);
+  color: #00A3E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.brandCardTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem;
+}
+
+.brandCardText {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  font-style: italic;
+}
+
+.brandCardFooter {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+}
+
+.brandCardFooter strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .brandCard {
+    display: none;
+  }
+}
